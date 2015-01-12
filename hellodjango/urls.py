@@ -1,5 +1,7 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
+from django.views.generic.base import RedirectView
+
 
 from django.contrib.auth.models import User
 from rest_framework import routers, serializers, viewsets
@@ -21,10 +23,6 @@ router.register(r'users', UserViewSet)
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
 urlpatterns = [
-
-]
-
-urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'hellodjango.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
@@ -34,6 +32,11 @@ urlpatterns = patterns('',
     url(r'^api/', include(router.urls)),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 
+    url(r'^admin$', RedirectView.as_view(url='/admin/')),
+    url(r'^home$', RedirectView.as_view(url='/home/')),
+    url(r'^api$', RedirectView.as_view(url='/api/')),
+    url(r'^api-auth$', RedirectView.as_view(url='/api-auth/')),
+
     url(r'', include('frontend.urls')),
 
-)
+]

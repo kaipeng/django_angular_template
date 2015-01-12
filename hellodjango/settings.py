@@ -58,14 +58,13 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    #'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    #'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-APPEND_SLASH = True
 ROOT_URLCONF = 'hellodjango.urls'
 
 WSGI_APPLICATION = 'hellodjango.wsgi.application'
@@ -102,7 +101,7 @@ STATIC_URL = '/static/'
 
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR,  'templates'),
-    os.path.join(BASE_DIR,  'static'),
+    #os.path.join(BASE_DIR,  'static'),
 )
 
 
@@ -111,6 +110,7 @@ TEMPLATE_DIRS = (
 ###
 
 # Parse database configuration from $DATABASE_URL
+#Uncomment for heroku deployment
 #import dj_database_url
 #DATABASES['default'] = dj_database_url.config()
 
