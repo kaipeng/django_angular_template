@@ -1,5 +1,5 @@
 """
-Django settings for spire_dj project.
+Django settings for project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/1.7/topics/settings/
@@ -91,6 +91,7 @@ STATIC_URL = '/static/'
 
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR,  'templates'),
+    os.path.join(BASE_DIR,  'static'),
 )
 
 
