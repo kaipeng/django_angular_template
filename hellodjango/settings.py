@@ -55,6 +55,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
+APPEND_SLASH = True
 ROOT_URLCONF = 'hellodjango.urls'
 
 WSGI_APPLICATION = 'hellodjango.wsgi.application'
